@@ -1,12 +1,12 @@
-This respository contains the software side of a Raspberry Pi microcontroller project. It corresponds to a Raspberry Pi (4 Model B) hooked up to a 32x64 matrix of LED lights which have been programmed to scroll the departure times of the next NYC-bound PATH Trains (think subway) leaving from Grove Street station in Jersey City headed to World Trade Center and 33rd St. in Manhattan. So the idea is, if you hang the LED on your wall, you'll know whether to mosey, walk, or run to make the next train. 
+This respository contains the software side of a Raspberry Pi project. It corresponds to a Raspberry Pi (4 Model B) hooked up to a 32x64 matrix of LED lights which have been programmed to scroll the departure times of the next NYC-bound PATH Trains (think subway) leaving from Grove Street station in Jersey City headed to World Trade Center and 33rd Street in Manhattan. So the idea is, if you hang the LED matrix display on your wall, you'll know whether to mosey, walk, or run to make the next train. 
 
-This code scrapes data from the Path website. There is a PATH tain API that a developer made available (mrazza; https://path.api.razza.dev/v1/stations/grove_street/realtime), but we did not want to rely on an existing API. We wanted a more general solution for a getting content that existed on the web under the assumption that an API won't always be available. 
+This code scrapes data from the Path website. There is a PATH tain API that a developer made available (mrazza; https://path.api.razza.dev/v1/stations/grove_street/realtime), but we did not want to rely on an existing API. We wanted a more general solution for getting content from the web under the assumption that an API won't always be available. 
 
 (Disclaimer: You'll need to update this logic if the layout of the PATH train webpage changes. Also, consider adding a button that only starts the LED up when you need it, so your IP is not refreshing the PATH website every few seconds.)
 
 (Note: You can modify the code to reference a different train station on the PATH website, scrape and then reference another transit system's website altogether, or scroll completely unrelated content from the web across the LED light display.)
 
-The text scroll includes two unnecessary but fun features: images and sounds from Digital Physics the video game are included. Feel free to disable the aucio code that playse the sound if it drives you crazy.
+The text scroll includes two unnecessary but fun features: images and sounds from Digital Physics the video game. Feel free to disable the code that plays the sound if it drives you crazy.
 
 Video Game:
 https://digital-physics.itch.io/digital-physics
