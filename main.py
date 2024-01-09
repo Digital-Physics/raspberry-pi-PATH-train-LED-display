@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
 import time
@@ -28,9 +29,12 @@ for i in range(7):
     ping_img_with_black_bg.paste(ping_img, (0, 0), ping_img)
     running_seq.append(ping_img_with_black_bg)
 
-# Set up the Selenium webdriver
-driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')
 url = "https://www.panynj.gov/path/en/index.html"
+
+#driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')
+url = "https://www.panynj.gov/path/en/index.html"
+chrome_service = Service('/usr/lib/chromium-browser/chromedriver')
+driver = webdriver.Chrome(service=chrome_service)
 
 for _ in range(3):
     driver.get(url)
@@ -70,7 +74,7 @@ for _ in range(3):
         text_to_display = "Grove Street div not found."
         text_color = (255, 0, 0)
     for _ in range(3):
-        for i in range(400):
+        for i in range(550):
              draw.rectangle((0, 0, 1000, 1000), fill=(0,0,0,0))
              time.sleep(0.015)
              image.paste(running_seq[(i//10)%7], (-i + 150, 2))
