@@ -28,7 +28,7 @@ draw = ImageDraw.Draw(image)
 # load images
 running_seq = []
 for i in range(7):
-    ping_img = Image.open(f"./run/{i}.png").convert("RGBA")
+    ping_img = Image.open(f"./Run/{i}.png").convert("RGBA")
     ping_img = ping_img.transpose(Image.FLIP_LEFT_RIGHT)
     ping_img_with_black_bg = Image.new("RGBA", ping_img.size, (0,0,0,0))
     ping_img_with_black_bg.paste(ping_img, (0, 0), ping_img)
@@ -36,7 +36,7 @@ for i in range(7):
 
 running_seq2 = []
 for i in range(3):
-    ping_img = Image.open(f"./run2/{i}.png").convert("RGBA")
+    ping_img = Image.open(f"./Run2/{i}.png").convert("RGBA")
     ping_img = ping_img.transpose(Image.FLIP_LEFT_RIGHT)
     ping_img_with_black_bg = Image.new("RGBA", ping_img.size, (0,0,0,0))
     ping_img_with_black_bg.paste(ping_img, (0, 0), ping_img)
