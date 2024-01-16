@@ -92,12 +92,12 @@ for _ in range(3):
         print(f"Error playing sound: {e}")
 
     for _ in range(3):
-        for i in range(650):
+        for i in range(600):
              draw.rectangle((0, 0, 1000, 1000), fill=(0,0,0,0))
              time.sleep(0.015)
              image.paste(running_seq[(i//10)%7], (-i + 150, 2))
-             draw.text((-i + 250 + 20, 2), text_to_display, font=font, fill=text_color)
-             image.paste(running_seq2[(i//10)%3], (-i + 250, 2))
+             draw.text((-i + 180 + 20, 2), text_to_display, font=font, fill=text_color)
+             image.paste(running_seq2[(i//10)%3], (-i + 180, 2))
              matrix.SetImage(image.convert("RGB"))
 
 # Clear the LED matrix
