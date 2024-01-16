@@ -25,7 +25,6 @@ font = ImageFont.truetype("kongtext.ttf", 12)
 image = Image.new("RGB", (matrix.width, matrix.height), color=(0, 0, 0))
 draw = ImageDraw.Draw(image)
 
-
 # load images
 running_seq = []
 for i in range(7):
@@ -34,6 +33,14 @@ for i in range(7):
     ping_img_with_black_bg = Image.new("RGBA", ping_img.size, (0,0,0,0))
     ping_img_with_black_bg.paste(ping_img, (0, 0), ping_img)
     running_seq.append(ping_img_with_black_bg)
+
+running_seq2 = []
+for i in range(3):
+    ping_img = Image.open(f"./run2/{i}.png").convert("RGBA")
+    ping_img = ping_img.transpose(Image.FLIP_LEFT_RIGHT)
+    ping_img_with_black_bg = Image.new("RGBA", ping_img.size, (0,0,0,0))
+    ping_img_with_black_bg.paste(ping_img, (0, 0), ping_img)
+    running_seq2.append(ping_img_with_black_bg)
 
 # Set up the Selenium webdriver
 #driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')
@@ -85,11 +92,12 @@ for _ in range(3):
         print(f"Error playing sound: {e}")
 
     for _ in range(3):
-        for i in range(550):
+        for i in range(650):
              draw.rectangle((0, 0, 1000, 1000), fill=(0,0,0,0))
              time.sleep(0.015)
              image.paste(running_seq[(i//10)%7], (-i + 150, 2))
-             draw.text((-i + 150 + 20, 2), text_to_display, font=font, fill=text_color)
+             draw.text((-i + 250 + 20, 2), text_to_display, font=font, fill=text_color)
+             image.paste(running_seq2[(i//10)%3], (-i + 250, 2))
              matrix.SetImage(image.convert("RGB"))
 
 # Clear the LED matrix
