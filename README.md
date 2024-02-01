@@ -1,3 +1,7 @@
+![raspberry pi and led screen](./path_time_scroll.gif)
+![train time](./time_to_Train.jpg)
+![raspberry pi 4b](./raspberryPi4b.jpg)
+
 This respository contains the software side of a Raspberry Pi project. It corresponds to a Raspberry Pi (4 Model B) hooked up to a 32x64 matrix of LED lights which have been programmed to scroll the departure times of the next NYC-bound PATH Trains (think subway) leaving from Grove Street station in Jersey City headed to World Trade Center and 33rd Street in Manhattan. So the idea is, if you hang the LED matrix display on your wall, you'll know whether to mosey, walk, or run to make the next train. 
 
 This code scrapes data from the Path website. There is a PATH tain API that a developer made available (mrazza; https://path.api.razza.dev/v1/stations/grove_street/realtime), but we did not want to rely on an existing API. We wanted a more general solution for getting content from the web under the assumption that an API won't always be available. 
