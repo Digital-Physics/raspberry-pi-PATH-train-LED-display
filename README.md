@@ -39,6 +39,11 @@ If you've already set up your Pi, you may need to use the Raspberry Pi user name
 
 To find the Raspberry Pi IP on your WLAN, try "ping raspberrypi.local" or if you're on your Raspberry Pi use "hostname -I"
 
+Audio Note: 
+Static was encountered on our Bluetooth speaker that was connected to the Raspberry Pi 4 model b.
+To avoid it, open the config file with "sudo nano /boot/config.txt" and add this line to the config.txt file:
+"audio_pwm_mode=2"
+
 
 
 
